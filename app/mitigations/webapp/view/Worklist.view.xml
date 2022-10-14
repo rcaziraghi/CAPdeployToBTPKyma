@@ -47,7 +47,7 @@
                                 <OverflowToolbarLayoutData
                                     maxWidth="200px"
                                     priority="NeverOverflow"/>
-                            </layoutData>
+                                                    </layoutData>
                         </SearchField>
                     </OverflowToolbar>
                 </headerToolbar>
