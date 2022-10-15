@@ -43,4 +43,13 @@ xsuaa:
   servicePlanName: application
   parameters:
     xsappname: cpapp
+    role-collections:
+      - description: Manage Risks
+        name: RiskManager
+        role-template-references:
+          - '$XSAPPNAME.RiskManager'
+      - description: View Risks
+        name: RiskViewer
+        role-template-references:
+          - '$XSAPPNAME.RiskViewer'
   config: xs-security.json
