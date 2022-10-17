@@ -16,16 +16,16 @@
             "toolsId": "601ab350-c9ee-4e5c-8f9f-95ca86d08144"
         },
         "crossNavigation": {
-          "inbounds": {
-            "Risks-display": {
-              "signature": {
-                "parameters": {},
-                "additionalParameters": "allowed"
-              },
-              "semanticObject": "Risks",
-              "action": "display"
+            "inbounds": {
+                "Risks-display": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "Risks",
+                    "action": "display"
+                }
             }
-          }
         },
         "dataSources": {
             "mainService": {
@@ -153,5 +153,9 @@
     "sap.fiori": {
         "registrationIds": [],
         "archeType": "transactional"
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "risks"
     }
 }
