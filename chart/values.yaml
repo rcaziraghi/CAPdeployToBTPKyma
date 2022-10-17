@@ -1,5 +1,5 @@
 global:
-  domain: .c3ba5ae.kyma.ondemand.com
+  domain: eba936b.kyma.ondemand.com
   imagePullSecret: 
     name: container-registry
 srv:
@@ -9,7 +9,7 @@ srv:
     auth:
       serviceInstanceName: xsuaa
   image:
-    repository: https://api.c3ba5ae.kyma.ondemand.com/cpapp-srv
+    repository: rcaziraghi/cpapp-srv
     tag: latest
   resources:
     limits:
@@ -17,7 +17,7 @@ srv:
       memory: 500M
     requests:
       ephemeral-storage: 1G
-      cpu: 500m
+      cpu: 100m
       memory: 500M
   health_check:
     liveness:
@@ -26,7 +26,7 @@ srv:
       path: /
 hana_deployer:
   image:
-    repository: https://api.c3ba5ae.kyma.ondemand.com/cpapp-hana-deployer
+    repository: rcaziraghi/cpapp-hana-deployer
     tag: latest
   bindings:
     hana:
