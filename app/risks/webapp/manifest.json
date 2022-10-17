@@ -156,6 +156,6 @@
     },
     "sap.cloud": {
         "public": true,
-        "service": "risks"
+        "service": "cpapp.service"
     }
 }

@@ -157,6 +157,6 @@
     },
     "sap.cloud": {
         "public": true,
-        "service": "mitigations"
+        "service": "cpapp.service"
     }
 }
