@@ -1,6 +1,6 @@
 global:
   domain: eba936b.kyma.ondemand.com
-  imagePullSecret: 
+  imagePullSecret:
     name: container-registry
 srv:
   bindings:
@@ -17,7 +17,7 @@ srv:
       memory: 500M
     requests:
       ephemeral-storage: 1G
-      cpu: 100m
+      cpu: 200m
       memory: 500M
   health_check:
     liveness:
@@ -53,3 +53,34 @@ xsuaa:
         role-template-references:
           - '$XSAPPNAME.RiskViewer'
   config: xs-security.json
+html5_apps_repo_host:
+  serviceOfferingName: html5-apps-repo
+  servicePlanName: app-host
+html5_apps_deployer:
+  cloudService: cpapp.service
+  backendDestinations:
+    cpapp-srv:
+      service: srv
+  image:
+    repository: rcaziraghi/cpapp-html5-deployer
+    tag: latest
+  bindings:
+    xsuaa:
+      serviceInstanceName: xsuaa
+    destination:
+      serviceInstanceName: destination
+    html5_apps_repo:
+      serviceInstanceName: html5-apps-repo-host
+  resources:
+    limits:
+      cpu: 2000m
+      memory: 1G
+    requests:
+      cpu: 1000m
+      memory: 1G
+destination:
+  serviceOfferingName: destination
+  servicePlanName: lite
+  parameters:
+    version: 1.0.0
+    HTML5Runtime_enabled: true
