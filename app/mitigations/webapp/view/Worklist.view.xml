@@ -2,7 +2,8 @@
     controllerName="ns.mitigations.controller.Worklist"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:semantic="sap.f.semantic">
+    xmlns:semantic="sap.f.semantic"
+    xmlns:brc="ns.mitigations.libs.UI5BarCodeReader">
 
     <semantic:SemanticPage
         id="page"
@@ -49,6 +50,10 @@
                                     priority="NeverOverflow"/>
                                                     </layoutData>
                         </SearchField>
+                        <brc:BarCodeReader  id="barCodeReader"
+                            submit="onBarCodeSubmit"
+                            detect="onCameraDetection"
+                            closeOnDetect="true"  />
                     </OverflowToolbar>
                 </headerToolbar>
 
